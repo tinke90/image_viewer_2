@@ -8,10 +8,10 @@ var items = [];
 function ImageViewer(){
     const [imgData, setImgData] = useState([
         {
-            albumId : 'asdf',
-            id : '1',
-            tumbnailUrl : 'asdöfioa',
-            title : 'vittu',
+            albumId : '',
+            id : '',
+            tumbnailUrl : '',
+            title : '',
             url : 'https://www.google.com/fuck-you/',
         } 
     ]);
@@ -55,6 +55,10 @@ function ImageViewer(){
                 <div>
                     <span>Tumbnail url: </span>
                     {imgData[0].tumbnailUrl}
+                </div>
+
+                <div>
+                <img src={imgData[0].url} alt={imgData[0].title} />
                 </div>
             </div>
         </>
