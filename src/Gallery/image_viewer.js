@@ -1,11 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import ExtractData from '../Utils/ExtractData';
 import image_data from './image_data';
+
+import Button from '../Button/button';
+
 //import JSONData from "./image_data"
 
 var items = [];
 
 function ImageViewer(){
+    const [click, setClick] = useState(0);
     const [imgData, setImgData] = useState([
         {
             albumId : '',
@@ -16,18 +20,21 @@ function ImageViewer(){
         } 
     ]);
 
-    const [test, setTest] = useState([]);
-    
+    const ShowImage = () => {
+        console.log("clicked the fucking image");
+    }
+
     useEffect(() => {
         //items = ExtractData.Extract(imgData);
-        var asdf = image_data.GetJSONData().then(result => {
+        var data = image_data.GetJSONData().then(result => {
             //var parse = ExtractData.Extract(result);
             var parse = result;
-            console.log(parse[4999].albumId);
+            //console.log(parse[4999].albumId);
             setImgData(parse);
-        }) 
-        
-    }, []);
+        })
+
+        console.log(click)
+    }, [click]);
 
     return (
         <>
@@ -57,8 +64,14 @@ function ImageViewer(){
                     {imgData[0].tumbnailUrl}
                 </div>
 
+                <Button
+                    clicks={click => setClick(click)}/>
+
                 <div>
-                <img src={imgData[0].url} alt={imgData[0].title} />
+                <img
+                    src={imgData[0].url}
+                    alt={imgData[0].title}
+                    onClick={() => ShowImage()}/>
                 </div>
             </div>
         </>
