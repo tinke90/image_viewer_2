@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ExtractData from '../Utils/ExtractData';
 import image_data from './image_data';
-
+import ShowImageSlider from './ShowImage';
 import Button from '../Button/button';
 
 //import JSONData from "./image_data"
@@ -9,14 +9,13 @@ import Button from '../Button/button';
 var items = [];
 
 function ImageViewer(){
-    const [click, setClick] = useState(0);
     const [imgData, setImgData] = useState([
         {
             albumId : '',
             id : '',
-            tumbnailUrl : '',
+            thumbnailUrl : '',
             title : '',
-            url : 'https://www.google.com/fuck-you/',
+            url : 'https://www.google.com/react/',
         } 
     ]);
 
@@ -29,16 +28,19 @@ function ImageViewer(){
         var data = image_data.GetJSONData().then(result => {
             //var parse = ExtractData.Extract(result);
             var parse = result;
-            //console.log(parse[4999].albumId);
+            //console.log(parse[4999]);
             setImgData(parse);
         })
 
-        console.log(click)
-    }, [click]);
+        
+    }, []);
 
     return (
         <>
-            <div>
+             <ShowImageSlider
+                url={imgData[0].url}
+                title={imgData[0].title}/>
+             <div>
                 <div>
                     <span>ID: </span>
                     {imgData[0].id}
@@ -61,11 +63,8 @@ function ImageViewer(){
 
                 <div>
                     <span>Tumbnail url: </span>
-                    {imgData[0].tumbnailUrl}
+                    {imgData[0].thumbnailUrl}
                 </div>
-
-                <Button
-                    clicks={click => setClick(click)}/>
 
                 <div>
                 <img

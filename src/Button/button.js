@@ -40,12 +40,22 @@ function Button(prop){
 
     return(
         <>
-            <button className="btn_background" onClick={() => Decrease()}>
-                <span> {decrease} </span>
-            </button>
-            <button className="btn_background" onClick={() => Increase()}>
-                <span> {increase} </span>
-            </button>
+            <table className="btn_table">
+                <tr>
+                    <th className="btn_left_column">
+                        <button className="btn_background" onClick={() => Decrease()}>
+                            <span> {decrease} </span>
+                        </button>
+                    </th>
+                    <th className="btn_right_column">
+                        <button className="btn_background" onClick={() => Increase()}>
+                            <span> {increase} </span>
+                        </button>
+                    </th>
+                </tr>
+            </table>
+            
+            
         </>
     );
 }

@@ -1,0 +1,43 @@
+.show_background{
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+}
+
+.show_img_plate{
+    height: 60%;
+    width: 60%;
+    top: 25%;
+    left: 25%;
+    background: rgba(0,0,0);
+    position: absolute;
+}
+
+.show_img_frames{
+    top: 5%;
+    left: 5%;
+    height: 80%;
+    width: 90%;
+    position: absolute;
+}
+
+
+
+.show_table{
+    width: 100%;
+    height: 100%;
+    background: blue;
+}
+
+.show_top_col{
+    width: 100%;
+    height: 90%;
+    background: red;
+}
+
+.show_bottom_col{
+    width: 100%;
+    height: 10%;
+    background: blue;
+}
