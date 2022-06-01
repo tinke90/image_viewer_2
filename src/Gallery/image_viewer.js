@@ -9,18 +9,19 @@ import Button from '../Button/button';
 var items = [];
 
 function ImageViewer(){
+    const [imageSlider, setImageSlider] = useState(false);
     const [imgData, setImgData] = useState([
         {
             albumId : '',
             id : '',
             thumbnailUrl : '',
             title : '',
-            url : 'https://www.google.com/react/',
+            url : '',
         } 
     ]);
 
     const ShowImage = () => {
-        console.log("clicked the fucking image");
+        setImageSlider(true);
     }
 
     useEffect(() => {
@@ -37,9 +38,12 @@ function ImageViewer(){
 
     return (
         <>
-             <ShowImageSlider
-                url={imgData[0].url}
-                title={imgData[0].title}/>
+             {imageSlider
+             ? <ShowImageSlider
+             url={imgData[0].url}
+             title={imgData[0].title}
+             viewImage={imageSlider => setImageSlider(imageSlider)}/>
+            : null}
              <div>
                 <div>
                     <span>ID: </span>
