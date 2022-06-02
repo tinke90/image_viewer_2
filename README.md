@@ -43,8 +43,8 @@ Before launching the apache, configure some files.
                   ServerName my-react-app.com
                   ServerAlias www.my-react-app.com
                   ServerAdmin webmaster@my-react-app.com
-                  DocumentRoot "F:/javascript-projects/react-projects/my-react-app/build"
-                   <Directory F:/javascript-projects/react-projects/my-react-app/build>
+                  DocumentRoot "D:\navigate_to_installation_folder\project_folder\build"
+                   <Directory D:\navigate_to_installation_folder\project_folder\build>
                       Options Indexes FollowSymLinks MultiViews
                     AllowOverride all
                     Order Deny,Allow
