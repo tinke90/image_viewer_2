@@ -29,6 +29,37 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `Run in localhost`
+
+Install Xampp server to local machine from link below:
+https://www.apachefriends.org/download.html
+
+Before launching the apache, configure some files.
+ -> navigate_to_installation_folder/XAMPP/apache/conf/extra/
+ -> Edit file named httpd-vhosts.conf
+ -> If file is default file, scroll down to the last line and 
+    add following lines to the httpd-vhosts.conf file
+    
+      
+                <VirtualHost 127.0.0.1:80>
+                  ServerName my-react-app.com
+                  ServerAlias www.my-react-app.com
+                  ServerAdmin webmaster@my-react-app.com
+                  DocumentRoot "F:/javascript-projects/react-projects/my-react-app/build"
+                   <Directory F:/javascript-projects/react-projects/my-react-app/build>
+                      Options Indexes FollowSymLinks MultiViews
+                    AllowOverride all
+                    Order Deny,Allow
+                          Allow from all
+                          Require all granted
+                    </Directory>
+                </VirtualHost>
+                
+ -> Save and close the file.
+ -> Launch XAMPP Control panel and start Apache
+ -> Open Browser and navigate to the http://127.0.0.1/
+      
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
