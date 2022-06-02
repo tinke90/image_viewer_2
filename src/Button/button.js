@@ -4,30 +4,18 @@ import "../Styling/button.css";
 function Button(prop){
     const [click, setClick] = useState(prop.currentImage);
     
+    // increase / decrease button texts
     let increase = ">>";
     let decrease = "<<";
 
-    /*const Increase = () => {
-        if(click < 5000){
-            
-        }
-        setClick(click => click + 1);
-        console.log(click);
-    }
-    const Decrease = () => {
-        if(click > 0){
-            
-        }
-        setClick(click => click - 1);
-        console.log(click);
-    }*/
-
+    // Increase the size of JSON IMG list
     const Increase = () => {
         if(click < 4999){
             setClick(click => click + 1);
         }
     }
 
+    // Decrease till value is zero
     const Decrease = () => {
         if(click > 0){
             setClick(click => click - 1);
@@ -54,8 +42,6 @@ function Button(prop){
                     </th>
                 </tr>
             </table>
-            
-            
         </>
     );
 }

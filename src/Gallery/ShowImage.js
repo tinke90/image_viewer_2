@@ -2,19 +2,23 @@ import React, {useState, useEffect} from "react";
 import Button from '../Button/button';
 import "../Styling/show.css";
 
-
+/**
+ * 
+ * @param prop 
+ *      Params: url, title, images, currentImage, viewImage
+ * @returns 
+ * 
+ * Allowe user to review images by clicking [previous=<<] or [next=>>]
+ */
 function Show(prop){
     const [click, setClick] = useState(prop.currentImage);
     const [imageSlider, setImageSlider] = useState(true);
-
 
     const CloseImageSlider = () => {
         setImageSlider(false);
     }
 
     useEffect(() => {
-        console.log("current image")
-        console.log(click);
         setClick(prop.currentImage);
     },[])
 

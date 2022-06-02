@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import image_data from "../Gallery/image_data";
 
-/* Extract the JSON data that was get from
+/** THIS FUNCTION IS NO LONGER USED
+ * Extract the JSON data that was get from
  *  axios http get request
  */
 const Extract = (data) => {
