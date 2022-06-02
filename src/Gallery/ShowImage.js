@@ -4,7 +4,7 @@ import "../Styling/show.css";
 
 
 function Show(prop){
-    const [click, setClick] = useState(0);
+    const [click, setClick] = useState(prop.currentImage);
     const [imageSlider, setImageSlider] = useState(true);
 
 
@@ -13,8 +13,10 @@ function Show(prop){
     }
 
     useEffect(() => {
+        console.log("current image")
         console.log(click);
-    },[click])
+        setClick(prop.currentImage);
+    },[])
 
     useEffect(() => {
         prop.viewImage(imageSlider);
@@ -31,7 +33,7 @@ function Show(prop){
                                 <tr>
                                     <th>
                                         <span>
-                                            {prop.title}
+                                            {prop.images[click].title}
                                         </span>
                                     </th>
                                     <th className="show_close" onClick={() => CloseImageSlider()}>
@@ -46,13 +48,13 @@ function Show(prop){
                     <tr>
                         <th className="show_mid_col">
                             <img className="show_img_frames"
-                                src={prop.url}
+                                src={prop.images[click].url}
                                 alt={prop.title}/>
                         </th>
                     </tr>
                     <tr>
                         <th className="show_bottom_col">
-                            <Button clicks={click => setClick(click)}/>
+                            <Button clicks={click => setClick(click)} currentImage={prop.currentImage}/>
                         </th>
                     </tr>
                 </table>

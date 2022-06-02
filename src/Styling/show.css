@@ -47,4 +47,11 @@
 .show_close{
     background: white;
     color: black;
+    position: absolute;
+    right: 1%;
+    width: 3%;
+}
+
+.show_close:hover{
+    cursor:pointer;
 }

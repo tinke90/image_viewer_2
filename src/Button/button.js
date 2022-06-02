@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import "../Styling/button.css";
 
 function Button(prop){
-    const [click, setClick] = useState(0);
+    const [click, setClick] = useState(prop.currentImage);
     
     let increase = ">>";
     let decrease = "<<";
