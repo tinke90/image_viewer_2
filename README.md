@@ -31,7 +31,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `Run in localhost`
 
-Install Xampp server to local machine from link below: https://www.apachefriends.org/download.html
+Install Xampp server to local machine from link: https://www.apachefriends.org/download.html
 
 Before launching the apache, configure some files.
  -> navigate_to_installation_folder/XAMPP/apache/conf/extra/
