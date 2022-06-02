@@ -34,10 +34,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 Install Xampp server to local machine from link: https://www.apachefriends.org/download.html
 
 Before launching the apache, configure some files.
- -> navigate_to_installation_folder/XAMPP/apache/conf/extra/
- -> Edit file named httpd-vhosts.conf
- -> If file is default file, scroll down to the last line and 
-    add following lines to the httpd-vhosts.conf file
+##### -> navigate_to_installation_folder/XAMPP/apache/conf/extra/
+##### -> Edit file named httpd-vhosts.conf
+##### -> If file is default file, scroll down to the last line and add following lines to the httpd-vhosts.conf file
     
       
                 <VirtualHost 127.0.0.1:80>
@@ -54,9 +53,9 @@ Before launching the apache, configure some files.
                     </Directory>
                 </VirtualHost>
                 
- -> Save and close the file.
- -> Launch XAMPP Control panel and start Apache
- -> Open Browser and navigate to the http://127.0.0.1/
+##### -> Save and close the file.
+##### -> Launch XAMPP Control panel and start Apache
+##### -> Open Browser and navigate to the http://127.0.0.1/
       
 
 ### `npm run eject`
